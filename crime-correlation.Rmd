@@ -26,8 +26,7 @@ ggplot(Crime, aes(x=Delinquency.index))+geom_histogram(breaks=seq(10, 45, by = 5
 ggplot(Crime, aes(x=Intelligence.Quotient))+geom_histogram(breaks=seq(70, 140, by = 10),col="red", fill="green", alpha = .2) + labs(title="Histogram for Intelligence Quotient") + labs(x="Intelligence Quotient", y="Count") +  xlim(c(70,140)) + ylim(c(0,6))
 
 #Scatterplot between the variables delinquency index and intelligence quotient
-ggplot(Crime, aes(y=Delinquency.index, x=Intelligence.Quotient)) + geom_point(shape=1) +    # Use hollow circles 
-  geom_smooth() + xlabs(x="Intelligence Quotient") +ylabs("Delinquency Index")+title("Scatter plot - Delinquency Index and Intelligence Quotient ")
+ggplot(Crime, aes(y=Delinquency.index, x=Intelligence.Quotient)) + geom_point(shape=1) + geom_smooth() + xlab("Intelligence Quotient")+ylab("Delinquency Index")+ggtitle("Scatter plot - Delinquency Index and Intelligence Quotient ")
 
 #From the plot, it can be assumed that delinquency index and intelligence quotient are negatively correlated. Let us look at the correlation coefficient between them
 
