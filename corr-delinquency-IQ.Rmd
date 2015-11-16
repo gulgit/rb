@@ -44,5 +44,5 @@ Correlation Coefficient value range  | Strength of relationship
 -.03 to -0.1  | Weak and negative
 -.01 to +0.1  | Very weak or no relationship
 +.01 to +0.3  | Weak and positive
-+0.3 to -.5  | Moderate and positive
++0.3 to -.5  | Moderate and positive 
 +0.5 to +1  | Strong and positive
