@@ -29,7 +29,7 @@ EdX offers two self paced courses to learn R and statistics. Request to enroll a
 
 Ample online resources are available on internet to help you clarify any doubts. Once you are done through this course, I recommend you to read this book, [Advanced R](http://adv-r.had.co.nz/) by Hadley Wickham.
 
-This sets a good foundation for to evolve into a good user of R.
+This sets a good foundation to evolve into a good user of R.
 
 What do I use R for?
 -------------------------
