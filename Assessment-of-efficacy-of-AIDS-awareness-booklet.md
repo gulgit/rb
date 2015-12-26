@@ -54,7 +54,7 @@ str(aids)
 
 * The POST_TEST variable contains the score of respondent on AIDS after going through the awareness materials.
 
-To assess the effectiveness of the awareness material, we have to check whether the post-test score significantly higher than the pretest score.
+To assess the effectiveness of the awareness material, we have to check whether the post-test scores are significantly higher than the pretest scores.
 
 Before performing any statistical test, let us check the descriptive statistics and plots.
 #### Descriptive statistics and visualisation of data
@@ -129,7 +129,7 @@ ggplot(aids,aes(POST_TEST))+geom_density(fill="white", colour="darkgreen")+ xlab
 
 ![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-1.png) 
 
-From the bar charts and density plots, it is apparent that the number of participants scored higher in post-test after going through the awareness materials.
+From the bar charts and density plots, it is apparent that there is an increase in number of participants scored higher in post-test than in pre-test scores after going through the awareness materials.
 
 boxplot for pre-test scores
 
@@ -146,10 +146,11 @@ boxplot(aids$POST_TEST)
 ```
 
 ![plot of chunk unnamed-chunk-13](figure/unnamed-chunk-13-1.png) 
+
 The above box-plots too indicate that there is shift in number of participants scoring higher in post-test than in pre-test.
 
-### Further investigation
-Prima facie it appears that the post-test scores are higher than the pre-test scores. One should not draw conclusions based on descriptive statistics
+### Further investigations
+Prima facie it appears that the post-test scores are higher than the pre-test scores. One should not draw conclusions based on descriptive statistics.
 
 * A paired t-test will be performed here as the data is collected from the same subjects before and after the intervention i.e., AIDS awareness materials
 
@@ -226,7 +227,7 @@ var.test(aids$PRE_TEST,aids$POST_TEST)
 ## ratio of variances 
 ##           3.651135
 ```
-* The results (p-value < 0.05) show that the variances for the two scores are equal, and supporting the assumption of homegenity.
+* The results (p-value < 0.05) support our the assumption of homegenity in the two variances.
 
 ### Hypotheses testing
 The null hypothesis is that there is no difference between the mean scores of pre-test and post-test scores.
@@ -259,22 +260,22 @@ Now, let us test whether the post-test scores are significantly higher than the 
 **Alternate hypothesis is - there is difference mean scores of pre-test and post-test, and the mean of post-test scores is higher than pre-test scores.**
 
 ```r
-t.test(aids$PRE_TEST,aids$POST_TEST,var.equal=TRUE,alternative="greater",paired=TRUE)
+t.test(aids$POST_TEST,aids$PRE_TEST,var.equal=TRUE,alternative="greater",paired=TRUE)
 ```
 
 ```
 ## 
 ## 	Paired t-test
 ## 
-## data:  aids$PRE_TEST and aids$POST_TEST
-## t = -23.294, df = 71, p-value = 1
+## data:  aids$POST_TEST and aids$PRE_TEST
+## t = 23.294, df = 71, p-value < 2.2e-16
 ## alternative hypothesis: true difference in means is greater than 0
 ## 95 percent confidence interval:
-##  -7.381772       Inf
+##  6.396006      Inf
 ## sample estimates:
 ## mean of the differences 
-##               -6.888889
+##                6.888889
 ```
-The results (p-value < 0.05) show that the mean of post-test scores is significantly higher than the pre-test scores.
+The results (p-value < 0.05) show that the mean of post-test scores is significantly higher than the pre-test scores. The AIDS awareness booklet has intended benefits i.e., to increase the awareness on AIDS.
 
-Note:- It is not required to perform the first paried t-test. It's been mentioned to understand and appreciate the concept better.
+Note:- It is not required to perform the first paried t-test. It's been illustrated to help understand and appreciate the concept better.
